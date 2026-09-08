@@ -12,7 +12,7 @@
   let { children }: Props = $props();
 
   // rtc-agent 版本（与 jsDelivr CDN 上的 npm 版本对应）
-  const RTC_AGENT_VERSION = '0.1.0';
+  const RTC_AGENT_VERSION = '0.1.1-rc.3';
   const RTC_AGENT_CDN_URL = `https://cdn.jsdelivr.net/npm/@rtc-agent/component@${RTC_AGENT_VERSION}/dist/index.js`;
 
   onMount(() => {
@@ -107,4 +107,7 @@ clear, descriptive node names.`,
 {@render children()}
 
 <!-- 全局 AI 助手面板 -->
-<rtc-agent app-label="Mermaid AI" scenarios-url="/rtc-agent/scenarios/"></rtc-agent>
+<rtc-agent
+  app-label="Mermaid AI"
+  scenarios-url="/rtc-agent/scenarios/"
+  server-url="http://localhost:28080"></rtc-agent>
