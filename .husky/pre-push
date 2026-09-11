@@ -1,0 +1,32 @@
+#!/bin/sh
+# Pre-push hook: 确保发布前使用 CDN 版本而非本地版本
+
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Checking rtc-agent mode before push..."
+
+# 检查 +layout.svelte 中是否使用了本地路径
+if grep -q "RTC_AGENT_LOCAL_URL\|/rtc-agent-local/index.js" src/routes/+layout.svelte; then
+    echo "❌ Error: Detected local rtc-agent mode in src/routes/+layout.svelte"
+    echo ""
+    echo "Found local development configuration. Before pushing, you must:"
+    echo "1. Switch back to CDN mode in src/routes/+layout.svelte"
+    echo "2. Use the RTC_AGENT_CDN_URL constant instead of RTC_AGENT_LOCAL_URL"
+    echo ""
+    echo "To switch to CDN mode, ensure your +layout.svelte contains:"
+    echo "  const RTC_AGENT_VERSION = 'x.y.z';"
+    echo "  const RTC_AGENT_CDN_URL = \`https://cdn.jsdelivr.net/npm/@rtc-agent/component@\${RTC_AGENT_VERSION}/dist/index.js\`;"
+    echo "  <script type=\"module\" src={RTC_AGENT_CDN_URL}></script>"
+    echo ""
+    echo "If you need to test locally, use local dev mode but don't push until you switch back."
+    exit 1
+fi
+
+# 检查是否存在 rtc-agent-local 静态文件（开发时的临时文件）
+if [ -d "static/rtc-agent-local" ]; then
+    echo "⚠️  Warning: static/rtc-agent-local directory exists"
+    echo "This is fine for local development, but ensure it's in .gitignore"
+fi
+
+echo "✅ rtc-agent mode check passed (using CDN version)"
+exit 0

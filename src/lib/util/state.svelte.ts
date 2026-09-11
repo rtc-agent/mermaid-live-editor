@@ -115,6 +115,12 @@ const processState = async (state: State) => {
 // Replaces the old URL-hash store subscription; assigned by initURLSubscription.
 let updateHash: ((serialized: string) => void) | undefined;
 
+// External listeners notified when validation completes (used by editorAPI).
+const validationListeners: (() => void)[] = [];
+export const onValidationDone = (listener: () => void): void => {
+  validationListeners.push(listener);
+};
+
 // Persist the current input state and asynchronously re-validate it,
 // publishing the result to `validatedState` (and the URL hash, once
 // initURLSubscription has run). Only called from update(), which suppresses
@@ -125,6 +131,9 @@ const persistAndProcess = (): void => {
   void processState(snapshot).then((processed) => {
     validatedCurrent = processed;
     updateHash?.(processed.serialized);
+    for (const listener of validationListeners) {
+      listener();
+    }
   });
 };
 
