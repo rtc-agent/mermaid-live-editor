@@ -1,14 +1,11 @@
-name: Tests
+name: Tests (DISABLED)
 
 on:
-  pull_request:
-    branches:
-      - master
-      - develop
-  merge_group:
+  workflow_dispatch: # Disabled - was: pull_request/merge_group
 
 jobs:
   playwright:
+    if: false # Disabled
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
     container:

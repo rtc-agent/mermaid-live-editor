@@ -1,10 +1,9 @@
-name: Create release pull request
+name: Create release pull request (DISABLED)
 on:
-  push:
-    branches:
-      - develop
+  workflow_dispatch: # Disabled - was: push to develop
 jobs:
   productionPromotion:
+    if: false # Disabled
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

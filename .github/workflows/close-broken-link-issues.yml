@@ -1,14 +1,14 @@
-name: Close broken link issues
+name: Close broken link issues (DISABLED)
 
 on:
-  issues:
-    types: [opened, edited]
+  workflow_dispatch: # Disabled - was: issues
 
 permissions:
   issues: write
 
 jobs:
   close-broken-link-issues:
+    if: false # Disabled
     if: github.event.issue.state == 'open'
     runs-on: ubuntu-latest
     steps:

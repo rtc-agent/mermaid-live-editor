@@ -1,8 +1,7 @@
-name: Update Browserslist database
+name: Update Browserslist database (DISABLED)
 
 on:
-  schedule:
-    - cron: '0 2 1,15 * *'
+  workflow_dispatch: # Disabled - was: schedule
 
 permissions:
   contents: write
@@ -10,6 +9,7 @@ permissions:
 
 jobs:
   update-browserslist-database:
+    if: false # Disabled
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

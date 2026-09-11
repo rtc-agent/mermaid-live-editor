@@ -1,21 +1,11 @@
-name: Docker
+name: Docker (DISABLED)
 
 on:
-  push:
-    branches:
-      # Publish `master` as Docker `latest` image.
-      - master
-      # Publish `develop` as Docker `nightly` image.
-      - develop
-
-  # Run tests for all PRs to master and develop.
-  pull_request:
-    branches:
-      - master
-      - develop
+  workflow_dispatch: # Disabled - was: push/pull_request
 
 jobs:
   docker:
+    if: false # Disabled
     runs-on: ubuntu-latest
     permissions:
       contents: read
