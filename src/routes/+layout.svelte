@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte';
   import { onMount } from 'svelte';
   import { mode } from 'mode-watcher';
+  import { base } from '$app/paths';
   import '../app.css';
   import initEditorAPI from '$/util/editorAPI';
 
@@ -117,5 +118,6 @@ clear, descriptive node names.`,
 <!-- Global AI assistant panel -->
 <rtc-agent
   app-label="Mermaid AI"
-  scenarios-url="/rtc-agent/scenarios/"
+  scenarios-url="{base}/rtc-agent/scenarios/"
+  redirect-uri="{base}/auth/callback.html"
   server-url="https://rtc-agent.cherish.chat"></rtc-agent>
