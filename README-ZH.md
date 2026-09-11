@@ -2,38 +2,38 @@
 
 <div align="center">
 
-**Transform diagram creation with AI-powered assistance**
+**用 AI 重新定义图表创作**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=mermaid)](https://rtc-agent.github.io/mermaid-live-editor)
-[![RTC-Agent](https://img.shields.io/badge/Powered%20by-RTC--Agent-blue?style=for-the-badge)](https://github.com/rtc-agent/web-components)
+[![在线演示](https://img.shields.io/badge/在线-演示-brightgreen?style=for-the-badge&logo=mermaid)](https://rtc-agent.github.io/mermaid-live-editor)
+[![RTC-Agent](https://img.shields.io/badge/驱动%20-RTC--Agent-blue?style=for-the-badge)](https://github.com/rtc-agent/web-components)
 
-![Demo](./static/demo.gif)
+![演示效果](./static/demo.gif)
 
 </div>
 
 ---
 
-## ✨ What's New
+## ✨ 全新功能
 
-The Mermaid Live Editor now features **RTC-Agent integration**, bringing AI-powered diagram creation directly into your browser. Simply describe what you want to draw in natural language, and watch as the AI creates, validates, and refines your Mermaid diagrams in real-time.
+Mermaid Live Editor 现已集成 **RTC-Agent**，将 AI 驱动的图表创建能力直接带入浏览器。只需用自然语言描述你想绘制的内容，AI 就会实时创建、验证并优化你的 Mermaid 图表。
 
-### 🎯 Key Capabilities
+### 🎯 核心能力
 
-| Feature                     | Description                                                        |
-| --------------------------- | ------------------------------------------------------------------ |
-| 🗣️ **Natural Language**     | Describe diagrams in plain English — no syntax memorization needed |
-| 🔄 **Real-time Validation** | AI automatically checks for syntax errors and fixes them           |
-| 📝 **Scenario Templates**   | Pre-built workflows for common diagram types                       |
-| 🎨 **Theme Sync**           | Seamlessly adapts to light/dark mode                               |
-| 🔌 **Extensible API**       | Programmatic interface for custom tool integration                 |
+| 功能              | 说明                             |
+| :---------------- | :------------------------------- |
+| 🗣️ **自然语言**   | 用日常英语描述图表，无需记忆语法 |
+| 🔄 **实时验证**   | AI 自动检查语法错误并修复        |
+| 📝 **场景模板**   | 为常见图表类型提供预置工作流     |
+| 🎨 **主题同步**   | 无缝适配亮色/暗色模式            |
+| 🔌 **可扩展 API** | 为自定义工具集成提供编程接口     |
 
 ---
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### 1. Load the Editor
+### 1. 加载编辑器
 
-The RTC-Agent component is automatically loaded from CDN:
+RTC-Agent 组件通过 CDN 自动加载：
 
 ```html
 <script
@@ -41,9 +41,9 @@ The RTC-Agent component is automatically loaded from CDN:
   src="https://cdn.jsdelivr.net/npm/@rtc-agent/component@0.1.2-rc4/dist/index.js"></script>
 ```
 
-### 2. Configure the Agent
+### 2. 配置 Agent
 
-In your layout file, configure the agent with editor tools:
+在你的布局文件中，为 agent 配置编辑器工具：
 
 ```typescript
 const agent = document.querySelector<RtcAgent>('rtc-agent');
@@ -85,17 +85,17 @@ agent.addEventListener(
 );
 ```
 
-### 3. Use the AI Assistant
+### 3. 使用 AI 助手
 
-Click the **Mermaid AI** button in the editor and start a conversation:
+点击编辑器中的 **Mermaid AI** 按钮，开始对话：
 
-> "Create a flowchart showing user login: start → enter credentials → validate → dashboard or error"
+> "创建一个用户登录流程图：开始 → 输入凭证 → 验证 → 成功进入仪表盘，失败显示错误并循环"
 
-The AI will generate the Mermaid code, validate it, and display the diagram instantly.
+AI 会生成 Mermaid 代码、验证语法，并即时显示图表。
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ 架构设计
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -125,36 +125,36 @@ The AI will generate the Mermaid code, validate it, and display the diagram inst
                     │   RTC-Agent Server            │
                     │   (rtc-agent.cherish.chat)    │
                     │                               │
-                    │   • LLM Orchestration         │
-                    │   • Tool Execution            │
-                    │   • Conversation History      │
+                    │   • LLM 编排                  │
+                    │   • 工具执行                  │
+                    │   • 对话历史                  │
                     └───────────────────────────────┘
 ```
 
-### Integration Points
+### 集成点说明
 
-| Component            | Responsibility                                                                         |
-| -------------------- | -------------------------------------------------------------------------------------- |
-| **`editorAPI.ts`**   | Exposes `getCode`, `setCode`, `validate`, `getDiagramType`, `waitForReady` on `window` |
-| **`+layout.svelte`** | Loads RTC-Agent script, configures agent with tools, syncs theme                       |
-| **`rtc-agent.d.ts`** | TypeScript declarations for type-safe integration                                      |
-| **`scenarios/`**     | Markdown templates demonstrating common workflows                                      |
+| 组件                 | 职责                                                                                  |
+| :------------------- | :------------------------------------------------------------------------------------ |
+| **`editorAPI.ts`**   | 在 `window` 上暴露 `getCode`、`setCode`、`validate`、`getDiagramType`、`waitForReady` |
+| **`+layout.svelte`** | 加载 RTC-Agent 脚本，配置 agent 工具，同步主题                                        |
+| **`rtc-agent.d.ts`** | 为类型安全集成提供 TypeScript 声明                                                    |
+| **`scenarios/`**     | 展示常见工作流的 Markdown 模板                                                        |
 
 ---
 
-## 📚 API Reference
+## 📚 API 参考
 
 ### Editor API
 
-The `window.editorAPI` object provides programmatic access to the editor:
+`window.editorAPI` 对象提供对编辑器的编程访问：
 
 ```typescript
 interface EditorAPI {
-  getCode(): string;
-  setCode(code: string): void;
-  validate(): ValidateResult;
-  getDiagramType(): string | undefined;
-  waitForReady(): Promise<void>;
+  getCode(): string; // 获取当前代码
+  setCode(code: string): void; // 设置代码并触发验证
+  validate(): ValidateResult; // 验证当前代码
+  getDiagramType(): string | undefined; // 获取图表类型
+  waitForReady(): Promise<void>; // 等待验证完成
 }
 
 interface ValidateResult {
@@ -164,14 +164,14 @@ interface ValidateResult {
 }
 ```
 
-### Agent Configuration
+### Agent 配置
 
 ```typescript
 interface RtcAgentConfig {
-  name?: string; // Agent identifier
-  description?: string; // Agent purpose
-  persona?: string; // System prompt
-  groups?: FunctionGroup[]; // Tool definitions
+  name?: string; // Agent 标识符
+  description?: string; // Agent 用途描述
+  persona?: string; // 系统提示词
+  groups?: FunctionGroup[]; // 工具定义
 }
 
 interface FunctionGroup {
@@ -191,40 +191,40 @@ interface FunctionDef {
 
 ---
 
-## 🎬 Demo Scenarios
+## 🎬 演示场景
 
-Pre-built scenarios are available in `static/rtc-agent/scenarios/`:
+预构建场景位于 `static/rtc-agent/scenarios/`：
 
-| Scenario                    | Description                                         |
-| --------------------------- | --------------------------------------------------- |
-| **Create Flowchart**        | Build a flowchart from natural language description |
-| **Create Sequence Diagram** | Generate sequence diagrams for system interactions  |
-| **Fix Syntax Error**        | Detect and correct Mermaid syntax issues            |
+| 场景             | 说明                        |
+| :--------------- | :-------------------------- |
+| **创建流程图**   | 从自然语言描述构建流程图    |
+| **创建时序图**   | 为系统交互生成时序图        |
+| **修复语法错误** | 检测并修正 Mermaid 语法问题 |
 
-Each scenario includes step-by-step instructions and expected outcomes.
+每个场景都包含分步说明和预期结果。
 
 ---
 
-## 🔧 Development
+## 🔧 开发指南
 
-### Local Development Mode
+### 本地开发模式
 
-For developing RTC-Agent alongside the editor:
+在开发编辑器时同时开发 RTC-Agent：
 
 ```bash
-# Build RTC-Agent locally
+# 本地构建 RTC-Agent
 cd ../web-components && pnpm build
 
-# Switch editor to local mode
+# 切换编辑器到本地模式
 pnpm rtc-agent:local
 
-# Start dev server
+# 启动开发服务器
 pnpm dev
 ```
 
-### Production Mode
+### 生产模式
 
-Switch back to CDN for production:
+生产环境切换回 CDN：
 
 ```bash
 pnpm rtc-agent:cdn
@@ -233,40 +233,40 @@ pnpm build
 
 ---
 
-## 📊 Integration Timeline
+## 📊 集成时间线
 
-| Commit     | Change                           |
-| ---------- | -------------------------------- |
-| `65341a08` | Initial CDN integration          |
-| `3062b9de` | Configure GitHub Pages base path |
-| `071ee4c1` | Use base path for RTC-Agent URLs |
-| `fe0691e9` | Final version: 0.1.2-rc4         |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Whether it's:
-
-- 🐛 Bug reports
-- 💡 Feature requests
-- 📝 Documentation improvements
-- 🎨 New scenario templates
-
-Please open an issue or submit a pull request.
+| 提交       | 变更                          |
+| :--------- | :---------------------------- |
+| `65341a08` | 初始 CDN 集成                 |
+| `3062b9de` | 配置 GitHub Pages 基础路径    |
+| `071ee4c1` | 为 RTC-Agent URL 使用基础路径 |
+| `fe0691e9` | 最终版本：0.1.2-rc4           |
 
 ---
 
-## 📄 License
+## 🤝 贡献指南
 
-This project is licensed under the MIT License.
+欢迎各种形式的贡献：
+
+- 🐛 Bug 报告
+- 💡 功能请求
+- 📝 文档改进
+- 🎨 新的场景模板
+
+请提交 Issue 或 Pull Request。
+
+---
+
+## 📄 许可证
+
+本项目采用 MIT 许可证。
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the RTC-Agent community**
+**由 RTC-Agent 社区用 ❤️ 打造**
 
-[Live Editor](https://rtc-agent.github.io/mermaid-live-editor) · [Documentation](https://rtc-agent.github.io/docs/)
+[在线编辑器](https://rtc-agent.github.io/mermaid-live-editor) · [文档](https://rtc-agent.github.io/docs/)
 
 </div>
