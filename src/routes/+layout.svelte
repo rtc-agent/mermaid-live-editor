@@ -15,13 +15,13 @@
   // Two modes: local development (RTC_AGENT_LOCAL_URL) or CDN (RTC_AGENT_CDN_URL)
   // Switch modes using: pnpm rtc-agent:local or pnpm rtc-agent:cdn
   const RTC_AGENT_VERSION = '0.1.0';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Available for local development mode
   const RTC_AGENT_LOCAL_URL = '/rtc-agent-local/index.js';
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Available for CDN mode switch
   const RTC_AGENT_CDN_URL = `https://cdn.jsdelivr.net/npm/@rtc-agent/component@${RTC_AGENT_VERSION}/dist/index.js`;
 
-  // Use local mode for development, CDN for production
+  // Use CDN mode for production, local mode for development
   // To switch: use the npm scripts or manually change this constant
-  const RTC_AGENT_URL = RTC_AGENT_LOCAL_URL; // Change to RTC_AGENT_CDN_URL before pushing
+  const RTC_AGENT_URL = RTC_AGENT_CDN_URL; // Change to RTC_AGENT_LOCAL_URL for local development
 
   onMount(() => {
     // Initialize editorAPI (required by rtc-agent tools)
