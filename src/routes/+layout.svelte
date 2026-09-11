@@ -14,7 +14,7 @@
   // rtc-agent configuration
   // Two modes: local development (RTC_AGENT_LOCAL_URL) or CDN (RTC_AGENT_CDN_URL)
   // Switch modes using: pnpm rtc-agent:local or pnpm rtc-agent:cdn
-  const RTC_AGENT_VERSION = '0.1.0';
+  const RTC_AGENT_VERSION = '0.1.2-rc2';
   // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Available for local development mode
   const RTC_AGENT_LOCAL_URL = '/rtc-agent-local/index.js';
   const RTC_AGENT_CDN_URL = `https://cdn.jsdelivr.net/npm/@rtc-agent/component@${RTC_AGENT_VERSION}/dist/index.js`;
@@ -115,4 +115,7 @@ clear, descriptive node names.`,
 {@render children()}
 
 <!-- Global AI assistant panel -->
-<rtc-agent app-label="Mermaid AI" scenarios-url="/rtc-agent/scenarios/"></rtc-agent>
+<rtc-agent
+  app-label="Mermaid AI"
+  scenarios-url="/rtc-agent/scenarios/"
+  server-url="https://rtc-agent.cherish.chat"></rtc-agent>
