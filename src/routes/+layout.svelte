@@ -15,7 +15,7 @@
   // rtc-agent configuration
   // Two modes: local development (RTC_AGENT_LOCAL_URL) or CDN (RTC_AGENT_CDN_URL)
   // Switch modes using: pnpm rtc-agent:local or pnpm rtc-agent:cdn
-  const RTC_AGENT_VERSION = '0.1.2-rc.5';
+  const RTC_AGENT_VERSION = '0.1.3-rc.1';
   // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Available for local development mode
   const RTC_AGENT_LOCAL_URL = '/rtc-agent-local/index.js';
   const RTC_AGENT_CDN_URL = `https://cdn.jsdelivr.net/npm/@rtc-agent/component@${RTC_AGENT_VERSION}/dist/index.js`;
@@ -34,6 +34,14 @@
     const setup = () => {
       // mode.current is already resolved to 'light' | 'dark' (mode-watcher handles 'system')
       agent.theme = mode.current ?? 'light';
+
+      // Configure bubble position to bottom-left corner
+      agent.windowConfig = {
+        bubblePosition: {
+          corner: 'bottom-left',
+          offset: { x: 20, y: 20 }
+        }
+      };
 
       agent.agentConfig = {
         description: 'Mermaid Live Editor - AI assistant for creating diagrams',
