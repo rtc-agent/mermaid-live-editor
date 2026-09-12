@@ -6,14 +6,19 @@
       "description": "Create a simple flowchart from natural language description"
     },
     {
-      "file": "fix-syntax-error.md",
-      "name": "Fix Syntax Error",
-      "description": "Detect and fix syntax errors in Mermaid code"
-    },
-    {
       "file": "create-sequence-diagram.md",
       "name": "Create a Sequence Diagram",
       "description": "Create a sequence diagram showing interactions between objects"
+    },
+    {
+      "file": "style-diagram.md",
+      "name": "Style a Diagram",
+      "description": "Apply custom styles, themes, and colors to make diagrams visually appealing"
+    },
+    {
+      "file": "fix-syntax-error.md",
+      "name": "Fix Syntax Error",
+      "description": "Detect and fix syntax errors in Mermaid code"
     }
   ]
 }
