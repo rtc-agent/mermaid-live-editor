@@ -14,6 +14,9 @@ const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
+  {
+    ignores: ['static/rtc-agent/shared-worker.js']
+  },
   js.configs.recommended,
   ...ts.configs.strict,
   ...ts.configs.stylistic,

@@ -16,7 +16,7 @@
     "lint:fix": "prettier --write --cache . && eslint --fix .",
     "format": "prettier --write --cache .",
     "pre-commit": "lint-staged",
-    "postinstall": "husky install && svelte-kit sync && (git config blame.ignoreRevsFile .git-blame-ignore-revs || true)",
+    "postinstall": "husky install && svelte-kit sync && (git config blame.ignoreRevsFile .git-blame-ignore-revs || true) && rtc-agent-setup",
     "test:unit": "vitest",
     "test:unit:ui": "vitest --ui",
     "test:unit:coverage": "vitest run --coverage",
@@ -91,6 +91,7 @@
     "vitest-dom": "0.1.1"
   },
   "dependencies": {
+    "@rtc-agent/component": "0.2.6-rc.1",
     "@codemirror/lang-json": "6.0.2",
     "@codemirror/lang-markdown": "6.5.2",
     "@codemirror/lang-yaml": "6.1.3",
