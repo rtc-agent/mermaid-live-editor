@@ -91,7 +91,7 @@
     "vitest-dom": "0.1.1"
   },
   "dependencies": {
-    "@rtc-agent/component": "0.2.6-rc.1",
+    "@rtc-agent/component": "0.2.6",
     "@codemirror/lang-json": "6.0.2",
     "@codemirror/lang-markdown": "6.5.2",
     "@codemirror/lang-yaml": "6.1.3",
