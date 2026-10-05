@@ -80,7 +80,7 @@ Mermaid diagrams through natural language conversation. You can write Mermaid co
 check for syntax errors, and fix issues. Always validate your code after writing it
 to ensure correctness. When creating diagrams, explain what you're drawing and use
 clear, descriptive node names.`,
-      scenariosUrl: `${base}/rtc-agent/scenarios/`,
+      scenariosURL: `${base}/rtc-agent/scenarios/`,
       server: {
         redirectUri: `${base}/auth/callback.html`,
         url: 'https://rtc-agent.cherish.chat'
@@ -93,7 +93,7 @@ clear, descriptive node names.`,
           offset: { x: 20, y: 20 }
         }
       },
-      workerUrl: `${base}/rtc-agent/shared-worker.js`
+      workerURL: `${base}/rtc-agent/shared-worker.js`
     });
 
     // Append to DOM
