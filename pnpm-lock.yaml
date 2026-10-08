@@ -48,8 +48,8 @@ importers:
         specifier: 0.2.3
         version: 0.2.3(@babel/core@7.29.7)(@babel/template@7.29.7)(mermaid@11.17.2)(tailwindcss@4.3.3)
       '@rtc-agent/component':
-        specifier: 0.3.1-rc.1
-        version: 0.3.1-rc.1
+        specifier: 0.3.2
+        version: 0.3.2
       codemirror:
         specifier: 6.0.2
         version: 6.0.2
@@ -1134,21 +1134,21 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@rtc-agent/client@0.3.1-rc.1':
-    resolution: {integrity: sha512-fFCd+fDM+DfL07rQCFCPTwsYg93/POJ/Q6exXdIYySVdex5PhJQzazkC3MoUrC5rHCouSQc/hsyiOsIc84ghgw==}
+  '@rtc-agent/client@0.3.2':
+    resolution: {integrity: sha512-k8W6ZCKAVM0lfyT8AELa5oULwB56dEBp59x3SHjGXLzcs1GLyW1ena38ABeLMmq8KWuRI+B5gDNdzrTXwTauVA==}
 
-  '@rtc-agent/component@0.3.1-rc.1':
-    resolution: {integrity: sha512-lwDtkXsnA+m49kOxS0FcBg067zpgWNZZxC+a3cWq6O2n5bs6X688NuIneJiENjCudE4mCzUwN1cJUgJHNCduxg==}
+  '@rtc-agent/component@0.3.2':
+    resolution: {integrity: sha512-IaPXSprEXnFkO9PeywIp6gh7DM1jYZ93oHlAYr3IiVW8QTPXLOmO0gDxBLxosxZtH8iZKQqEB8DXnI6xfT3xvA==}
     hasBin: true
 
-  '@rtc-agent/persistence@0.3.1-rc.1':
-    resolution: {integrity: sha512-1A0BJcBL4/FLOfDtTrMujO48wKyOIvWvB7YI++t4HhP13sabuCDtTPnDM1QddDxeiCmcZW+ItjsSjIqKzaibqg==}
+  '@rtc-agent/persistence@0.3.2':
+    resolution: {integrity: sha512-O0SWejrgQSqoUICP5BpBBGEK19N/39OxMNDRpYg8jpX0rM4J8+yYjXRvIB5CAHcv1g3LvWXDlJffYjkbI2q3Zg==}
 
-  '@rtc-agent/protocol@0.3.1-rc.1':
-    resolution: {integrity: sha512-n3pxp0TYoKswkb5oIjsnRFjIxtuZRXZpWXAIGCK3x1OdhRgmaqx14sqbYu8TNfqDIAoqYcu257V6wTe+4bx4Hg==}
+  '@rtc-agent/protocol@0.3.2':
+    resolution: {integrity: sha512-U1QKQKdt+6Hw8txfPz+vveUnVJHqkVR16dGNl9/T0eQUCnQhsjJmmKu/XUdSsN7TOE6La2WAASf1qhvSFflYVw==}
 
-  '@rtc-agent/worker@0.3.1-rc.1':
-    resolution: {integrity: sha512-akNnZSueNmLOJBfYJ7nAOAwU56MXBQY7x74B4DnZFuyy4An63AlIM9wHvfexj11+qqew73W8bI3RjTQTTI/xYg==}
+  '@rtc-agent/worker@0.3.2':
+    resolution: {integrity: sha512-ApAY+CPCKZ85VhY/p5uDKlHRDdJFjJzAWSo5AUBo1vUEV97slRQ7yNRwzUDRouCTF5d8oTdOvnvTidCDD0lYnA==}
 
   '@smithy/core@3.35.1':
     resolution: {integrity: sha512-i4YPS4B6ts7bjn7UwLnGjiZdprOvHvgGobFZsYK3GIY3E5hIqtj0rReU69BcTpGp+fvtraSNXeG1l+jtJvF55w==}
@@ -4958,23 +4958,23 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@rtc-agent/client@0.3.1-rc.1':
+  '@rtc-agent/client@0.3.2':
     dependencies:
       '@aws-sdk/client-s3': 3.1145.0
       '@aws-sdk/lib-storage': 3.1145.0(@aws-sdk/client-s3@3.1145.0)
-      '@rtc-agent/protocol': 0.3.1-rc.1
+      '@rtc-agent/protocol': 0.3.2
       centrifuge: 5.7.4
 
-  '@rtc-agent/component@0.3.1-rc.1':
+  '@rtc-agent/component@0.3.2':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@lit/context': 1.1.6
       '@lit/localize': 0.12.2
       '@primer/octicons': 19.38.0
-      '@rtc-agent/client': 0.3.1-rc.1
-      '@rtc-agent/persistence': 0.3.1-rc.1
-      '@rtc-agent/protocol': 0.3.1-rc.1
-      '@rtc-agent/worker': 0.3.1-rc.1
+      '@rtc-agent/client': 0.3.2
+      '@rtc-agent/persistence': 0.3.2
+      '@rtc-agent/protocol': 0.3.2
+      '@rtc-agent/worker': 0.3.2
       comlink: 4.4.2
       dompurify: 3.4.16
       highlight.js: 11.12.0
@@ -4986,25 +4986,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@rtc-agent/persistence@0.3.1-rc.1':
+  '@rtc-agent/persistence@0.3.2':
     dependencies:
       '@babel/core': 7.29.7
       '@babel/preset-typescript': 7.29.7(@babel/core@7.29.7)
-      '@rtc-agent/client': 0.3.1-rc.1
-      '@rtc-agent/protocol': 0.3.1-rc.1
+      '@rtc-agent/client': 0.3.2
+      '@rtc-agent/protocol': 0.3.2
       dexie: 4.4.6
       microdiff: 1.6.0
       spark-md5: 3.0.2
     transitivePeerDependencies:
       - supports-color
 
-  '@rtc-agent/protocol@0.3.1-rc.1': {}
+  '@rtc-agent/protocol@0.3.2': {}
 
-  '@rtc-agent/worker@0.3.1-rc.1':
+  '@rtc-agent/worker@0.3.2':
     dependencies:
-      '@rtc-agent/client': 0.3.1-rc.1
-      '@rtc-agent/persistence': 0.3.1-rc.1
-      '@rtc-agent/protocol': 0.3.1-rc.1
+      '@rtc-agent/client': 0.3.2
+      '@rtc-agent/persistence': 0.3.2
+      '@rtc-agent/protocol': 0.3.2
       comlink: 4.4.2
     transitivePeerDependencies:
       - supports-color
